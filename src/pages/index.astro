@@ -1,6 +1,9 @@
 ---
+import Section from "@/components/ui/Section.astro";
 import "../styles/global.css";
-import Xkale from "@/assets/xkale-logo.svg"
+import Xkale from "@/assets/xkale-logo.svg";
+import Genesys from "@/assets/genesys-logo.svg";
+import Build from "@/assets/build.svg";
 ---
 
 <html lang="en">
@@ -11,11 +14,19 @@ import Xkale from "@/assets/xkale-logo.svg"
     <title>Innova Latam 2025</title>
   </head>
   <body>
-    <header>
-      
-    </header>
     <main>
-
+      <Section class="h-dvh">
+        <div class="flex flex-col items-center justify-center h-full w-full">
+          <h1
+            class="font-bold text-[clamp(var(--text-4xl),4vw,var(--text-7xl))]"
+          >
+            Se viene algo especia
+          </h1>
+          <p class="text-[clamp(var(--text-base),4vw,var(--text-2xl))]">Pronto estará listo</p>
+          <img src={Build.src} alt="" class="w-full max-w-[32rem]">
+          <p>pagina en construcción</p>
+        </div>
+      </Section>
     </main>
   </body>
 </html>

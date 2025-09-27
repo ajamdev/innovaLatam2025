@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+
+@theme {
+  --color-genesys-orange: #FF451A;
+  --color-navy: #152550;
+  --color-azure: #2243A2;
+  --color-arctic: #B1CADA;
+  --color-nimbus: #F9F8F5;
+  --color-nimbus-shade: #F1EFEA;
+
+}
+
+
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/font/Roboto.woff2") format("woff2");
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: var(--color-nimbus);
+  color: var(--color-navy);
+}
