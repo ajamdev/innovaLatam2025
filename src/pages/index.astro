@@ -194,8 +194,8 @@ import { CARDS } from "@/lib/consts/card";
           {
             CARDS.map(({ id, name, description }) => (
               <article class="overflow-hidden rounded-lg  w-full backdrop-blur-md bg-nimbus-shade/30 flex flex-col items-center gap-4">
-                <div>
-                  <img src="" alt="" />
+                <div class="w-full h-full">
+                  <img class="size-full object-cover" src={`/all-img/cards/${id}.jpg`} alt="" />
                 </div>
                 <div class="p-6">
                   <p class="text-center">{description}</p>
