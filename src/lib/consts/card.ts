@@ -15,7 +15,7 @@ export const CARDS: Card[] = [
   },
   {
     id: 'convertir-desafios',
-    name: 'Convertir desafios',
+    name: 'Convertir desafíos',
     description:
       ' Convertir desafíos en ventajas competitivas sostenibles.',
   }

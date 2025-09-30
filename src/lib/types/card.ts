@@ -6,7 +6,7 @@ type cardId =
 type cardName =
   |'Aumenta eficiencia'
   |'Tomar decisiones'
-  |'Convertir desafios'
+  |'Convertir desafíos'
 
 export interface Card {
   id: cardId
