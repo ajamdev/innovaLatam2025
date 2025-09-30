@@ -24,8 +24,7 @@ export const SERVICIOS:Servicios[] = [
     name:'Ciberseguridad',
     description:[
       'Protección integral de activos digitales empresariales',
-      'En Xkale transformamos la ciberseguridad en un habilitador de confianza y continuidad para tu negocio. No solo protegemos tu infraestructura digital: diseñamos arquitecturas seguras, realizamos auditorías estratégicas y desplegamos sistemas de protección avanzados que evolucionan al ritmo de las amenazas.',
-      'Nuestro valor está en anticiparnos, responder de manera efectiva y garantizar que tus operaciones nunca se detengan.'
+      'En Xkale transformamos la ciberseguridad en un habilitador de confianza y continuidad para tu negocio. No solo protegemos tu infraestructura digital: diseñamos arquitecturas seguras, realizamos auditorías estratégicas y desplegamos sistemas de protección avanzados que evolucionan al ritmo de las amenazas.'
     ],
     icon:{
       name:Shield
