@@ -6,8 +6,7 @@ export const SERVICIOS:Servicios[] = [
   {
     name:'Experiencia del cliente',
     description:[
-      'Optimización integral de la experiencia del cliente',
-      'Transformamos la manera en que tus clientes interactúan con tu marca a través de estrategias personalizadas, análisis de datos avanzados y tecnologías de vanguardia. Desde el primer contacto hasta la fidelización a largo plazo.'
+      'En Xkale optimizamos de manera integral la experiencia de tus clientes a través de estrategias personalizadas, análisis de datos avanzados y tecnologías de vanguardia. Desde el primer contacto hasta la fidelización a largo plazo.'
     ],
     icon:{
       name:Users
