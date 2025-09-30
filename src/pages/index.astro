@@ -195,7 +195,7 @@ import { CARDS } from "@/lib/consts/card";
             CARDS.map(({ id, name, description }) => (
               <article class="overflow-hidden rounded-lg  w-full backdrop-blur-md bg-nimbus-shade/30 flex flex-col items-center gap-4">
                 <div class="w-full h-full">
-                  <img class="size-full object-cover" src={`/all-img/cards/${id}.jpg`} alt="" />
+                  <img loading="lazy"  class="size-full object-cover" src={`/all-img/cards/${id}.jpg`} alt="" />
                 </div>
                 <div class="p-6">
                   <p class="text-center">{description}</p>
@@ -211,9 +211,7 @@ import { CARDS } from "@/lib/consts/card";
         >
         </div>
         <div
-          class="md:hidden bg-[url('/all-img/background/genesys-right-mobile.png')] w-full h-full inset-0 absolute bg-no-repeat bg-bottom -z-10"
-        >
-        </div>
+          class="md:hidden bg-[url('/all-img/background/genesys-right-mobile.png')] w-full h-full inset-0 absolute bg-no-repeat bg-bottom -z-10"></div>
         <div class="mb-8">
           <h2
             class="text-center text-[clamp(var(--text-2xl),5vw,var(--text-3xl))] font-bold mb-4"
