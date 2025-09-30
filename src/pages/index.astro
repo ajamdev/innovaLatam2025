@@ -107,30 +107,28 @@ import { CARDS } from "@/lib/consts/card";
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="grid grid-cols-1 items-center justify-center space-y-5">
+          <div class="grid grid-cols-1 items-center justify-center gap-2">
             {
               PREMIO.map(({ id, name, description, title, list, icon }) => (
                 <article class=" rounded-lg p-6 w-full backdrop-blur-md bg-nimbus-shade/30 flex flex-col items-center md:flex-row gap-4">
                   <icon.name class="size-44 fill-genesys-orange" />
                   <div>
-                    <div>
-                      <div>
-                        <span>Bono de</span>
-                        <h2 class="text-[clamp(var(--text-xl),5vw,var(--text-2xl))] font-bold">
-                          {title?.toLocaleString("en-US", {
-                            style: "currency",
-                            currency: "USD",
-                          })}
-                          <span class="text-[clamp(var(--text-sm),4vw,var(--text-base))]">
-                            USD
-                          </span>
-                        </h2>
-                        <span>en Consultoría CX</span>
-                      </div>
-                    </div>
-                    <ul class="list-disc list-inside mt-4 space-y-1 marker:text-red-500 marker:font-bold">
+                    <h2 class="text-[clamp(var(--text-xl),5vw,var(--text-2xl))] font-bold text-balance ">
+                      <span class="text-base">Bono de</span>
+                      <span class="after:content-['USD']  inline-block after:text-sm">
+                        {title?.toLocaleString("en-US", {
+                          style: "currency",
+                          currency: "USD",
+                        })}
+                      </span>
+                      <span class="text-base">en Consultoría CX</span>
+                    </h2>
+                    <ul class="list-inside mt-4 space-y-1  text-sm ">
                       {list.map((item) => (
-                        <li>{item}</li>
+                        <li class="flex items-center space-x-3">
+                          <div class="size-1 rounded-full bg-genesys-orange"></div>
+                          <span>{item}</span>
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -147,7 +145,7 @@ import { CARDS } from "@/lib/consts/card";
                   class="h-32 w-auto md:w-full md:h-full"
                 />
               </div>
-              <div class="w-full flex flex-col space-y-2">
+              <div class="w-full flex flex-col">
                 <h2
                   class="text-[clamp(var(--text-lg),5vw,var(--text-xl))] font-bold"
                 >
@@ -156,7 +154,7 @@ import { CARDS } from "@/lib/consts/card";
                 <p>Tablet Samsung Galaxy Tab A9+ para el tercer lugar</p>
 
                 <ul
-                  class="list-disc list-inside mt-4 space-y-1 marker:text-red-500 marker:font-bold"
+                  class="list-disc list-inside mt-4 space-y-1 marker:text-red-500 marker:font-bold text-sm"
                 >
                   <li>Pantalla de 11 pulgadas con resolución 1920 x 1200</li>
                   <li>Procesador Qualcomm Snapdragon 695</li>
