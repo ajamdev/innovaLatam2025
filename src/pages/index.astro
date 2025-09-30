@@ -5,7 +5,7 @@ import Xkale from "@/assets/xkale-logo.svg";
 import Genesys from "@/assets/genesys-logo.svg";
 import { PREMIO } from "@/lib/consts/premio";
 import { SERVICIOS } from "@/lib/consts/servicios";
-import {CARDS} from '@/lib/consts/card'
+import { CARDS } from "@/lib/consts/card";
 ---
 
 <html lang="es">
@@ -109,7 +109,7 @@ import {CARDS} from '@/lib/consts/card'
             {
               PREMIO.map(({ id, name, description, title, list, icon }) => (
                 <article class=" rounded-lg p-6 w-full backdrop-blur-md bg-nimbus-shade/30 flex flex-col items-center md:flex-row gap-4">
-                    <icon.name class="size-44 fill-genesys-orange" />
+                  <icon.name class="size-44 fill-genesys-orange" />
                   <div>
                     <div>
                       <div>
@@ -125,7 +125,7 @@ import {CARDS} from '@/lib/consts/card'
                         </h2>
                         <span>en consultoría CX</span>
                       </div>
-                  </div>
+                    </div>
                     <ul class="list-disc list-inside mt-4 space-y-1 marker:text-red-500 marker:font-bold">
                       {list.map((item) => (
                         <li>{item}</li>
@@ -136,10 +136,14 @@ import {CARDS} from '@/lib/consts/card'
               ))
             }
             <article
-              class="flex flex-col md:flex-row  items-center backdrop-blur-md bg-nimbus-shade/30 p-6 rounded-lg w-full gap-4"
+              class="flex flex-col md:flex-row items-center backdrop-blur-md bg-nimbus-shade/30 p-6 rounded-lg w-full gap-4"
             >
               <div class="mb-4 md:w-1/2">
-                <img src="/all-img/tablet.png" alt="" class="h-32 w-auto md:w-full md:h-full" />
+                <img
+                  src="/all-img/tablet.png"
+                  alt=""
+                  class="h-32 w-auto md:w-full md:h-full"
+                />
               </div>
               <div class="w-full flex flex-col space-y-2">
                 <h2
@@ -178,21 +182,25 @@ import {CARDS} from '@/lib/consts/card'
         <lite-youtube videoid="ADrB8owi8KM"></lite-youtube>
       </Section>
       <Section>
-        <h2>¿Por qué participar?</h2>
-        <p>
+        <h2
+          class="text-[clamp(var(--text-2xl),5vw,var(--text-3xl))] font-bold mb-6 text-center"
+        >
+          ¿Por qué participar?
+        </h2>
+        <p class="text-pretty text-center mb-6">
           Al integrarte a esta dinámica, obtendrás un acompañamiento consultivo
           y experto que te permitirá:
         </p>
 
-        <div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
           {
-            CARDS.map(({id, name, description})=>(
-              <article>
+            CARDS.map(({ id, name, description }) => (
+              <article class="overflow-hidden rounded-lg  w-full backdrop-blur-md bg-nimbus-shade/30 flex flex-col items-center gap-4">
                 <div>
-                  <img src="" alt=""/>
+                  <img src="" alt="" />
                 </div>
-                <div>
-                  <p>{description}</p>
+                <div class="p-6">
+                  <p class="text-center">{description}</p>
                 </div>
               </article>
             ))
