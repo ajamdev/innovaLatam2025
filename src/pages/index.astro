@@ -3,28 +3,253 @@ import Section from "@/components/ui/Section.astro";
 import "../styles/global.css";
 import Xkale from "@/assets/xkale-logo.svg";
 import Genesys from "@/assets/genesys-logo.svg";
-import Build from "@/assets/build.svg";
+import { PREMIO } from "@/lib/consts/premio";
+import { SERVICIOS } from "@/lib/consts/servicios";
+import {CARDS} from '@/lib/consts/card'
 ---
 
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <title>Innova Latam 2025</title>
+    <meta
+      name="description"
+      content="Participa en Innova Latam 2025, un evento exclusivo de Genesys y Xkale que ofrece premios increíbles. Descubre nuestros servicios especializados en Customer Experience y Ciberseguridad para transformar tu organización."
+    />
+    <!-- Google Tag Manager -->
+    <script type="module">
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PSST28L4");
+    </script>
+    <!-- End Google Tag Manager -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"
+    ></script>
   </head>
   <body>
-    <main>
-      <Section class="h-dvh">
-        <div class="flex flex-col items-center justify-center h-full w-full">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PSST28L4"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+      <div
+        class="container mx-auto p-4 md:px-6 lg:px-52 w-full h-full flex flex-col justify-between items-center"
+      >
+        <div class="flex justify-between items-center w-full">
+          <Genesys class="w-26" />
+          <Xkale class="w-26" />
+        </div>
+        <div
+          class="flex flex-col items-center justify-center space-y-5 text-center"
+        >
           <h1
-            class="font-bold text-[clamp(var(--text-4xl),4vw,var(--text-7xl))] text-center mb-4"
+            class="font-bold text-[clamp(var(--text-4xl),5vw,var(--text-6xl))]"
           >
-            Se viene algo especial
+            Innova Latam 2025
           </h1>
-          <p class="text-[clamp(var(--text-base),4vw,var(--text-2xl))]">Pronto estará listo</p>
-          <img src={Build.src} alt="" class="w-full max-w-[32rem]">
-          <p>pagina en construcción</p>
+          <h2 class="text-2xl text-balance font-semibold">
+            La innovación no se espera, se crea.
+          </h2>
+          <p>
+            Participa en nuestra dinámica exclusiva y accede a bonos de
+            consultoría en CX diseñados para evaluar el estado actual de tu
+            experiencia de cliente, definir prioridades y construir una hoja de
+            ruta accionable orientada a resultados.
+          </p>
+          <div>
+            <a
+              href=""
+              class="bg-genesys-orange text-nimbus px-4 py-2 rounded-lg"
+              >Quiero participar</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <Section class="relative">
+        <div
+          class="hidden md:block bg-[url('/all-img/background/genesys-left.png')] w-full inset-0 absolute bg-no-repeat -z-10"
+        >
+        </div>
+        <div
+          class="md:hidden bg-[url('/all-img/background/genesys-left-mobile.png')] w-full inset-0 absolute bg-no-repeat -z-10"
+        >
+        </div>
+        <div class="mb-7">
+          <h2
+            class="text-[clamp(var(--text-2xl),5vw,var(--text-3xl))] font-bold text-balance text-center"
+          >
+            Gana valor para tu empresa
+          </h2>
+          <p
+            class="text-[clamp(var(--text-lg),5vw,var(--text-xl))] text-pretty text-center"
+          >
+            Al ingresar podrás participar por:
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="grid grid-cols-1 items-center justify-center space-y-5">
+            {
+              PREMIO.map(({ id, name, description, title, list, icon }) => (
+                <article class=" rounded-lg p-6 w-full backdrop-blur-md bg-nimbus-shade/30 flex flex-col items-center md:flex-row gap-4">
+                    <icon.name class="size-44 fill-genesys-orange" />
+                  <div>
+                    <div>
+                      <div>
+                        <span>Bono de</span>
+                        <h2 class="text-[clamp(var(--text-xl),5vw,var(--text-2xl))] font-bold">
+                          {title?.toLocaleString("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                          })}
+                          <span class="text-[clamp(var(--text-sm),4vw,var(--text-base))]">
+                            USD
+                          </span>
+                        </h2>
+                        <span>en consultoría CX</span>
+                      </div>
+                  </div>
+                    <ul class="list-disc list-inside mt-4 space-y-1 marker:text-red-500 marker:font-bold">
+                      {list.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))
+            }
+            <article
+              class="flex flex-col md:flex-row  items-center backdrop-blur-md bg-nimbus-shade/30 p-6 rounded-lg w-full gap-4"
+            >
+              <div class="mb-4 md:w-1/2">
+                <img src="/all-img/tablet.png" alt="" class="h-32 w-auto md:w-full md:h-full" />
+              </div>
+              <div class="w-full flex flex-col space-y-2">
+                <h2
+                  class="text-[clamp(var(--text-lg),5vw,var(--text-xl))] font-bold"
+                >
+                  Tercer Premio
+                </h2>
+                <p>Tablet Samsung Galaxy Tab A9+ para el tercer lugar</p>
+
+                <ul
+                  class="list-disc list-inside mt-4 space-y-1 marker:text-red-500 marker:font-bold"
+                >
+                  <li>Pantalla de 11 pulgadas con resolución 1920 x 1200</li>
+                  <li>Procesador Qualcomm Snapdragon 695</li>
+                  <li>4GB de RAM y 64GB de almacenamiento</li>
+                  <li>Batería de 7,040 mAh de larga duración</li>
+                  <li>Altavoces estéreo con sonido envolvente</li>
+                  <li>Android 13 con One UI 5.1</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div>
+            <div class="_form_26"></div><script
+              src="https://xkale.activehosted.com/f/embed.php?id=26"
+              charset="utf-8"></script>
+          </div>
+        </div>
+      </Section>
+      <Section>
+        <h2
+          class="text-[clamp(var(--text-2xl),5vw,var(--text-3xl))] font-bold mb-6 text-center"
+        >
+          De la estrategia a los resultados
+        </h2>
+        <lite-youtube videoid="ADrB8owi8KM"></lite-youtube>
+      </Section>
+      <Section>
+        <h2>¿Por qué participar?</h2>
+        <p>
+          Al integrarte a esta dinámica, obtendrás un acompañamiento consultivo
+          y experto que te permitirá:
+        </p>
+
+        <div>
+          {
+            CARDS.map(({id, name, description})=>(
+              <article>
+                <div>
+                  <img src="" alt=""/>
+                </div>
+                <div>
+                  <p>{description}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </Section>
+      <Section class="relative">
+        <div
+          class="hidden md:block bg-[url('/all-img/background/genesys-right.png')] w-full h-full inset-0 absolute bg-no-repeat -z-10 bg-bottom"
+        >
+        </div>
+        <div
+          class="md:hidden bg-[url('/all-img/background/genesys-right-mobile.png')] w-full h-full inset-0 absolute bg-no-repeat bg-bottom -z-10"
+        >
+        </div>
+        <div class="mb-8">
+          <h2
+            class="text-center text-[clamp(var(--text-2xl),5vw,var(--text-3xl))] font-bold mb-4"
+          >
+            Nuestros Servicios Especializados
+          </h2>
+          <p class="text-pretty text-center">
+            Descubre cómo nuestras soluciones en Customer Experience y
+            Ciberseguridad pueden transformar tu organización y proteger tu
+            futuro digital.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {
+            SERVICIOS.map(({ name, description, icon, list }) => (
+              <article class="backdrop-blur-md bg-nimbus-shade/30 p-6 rounded-lg w-full gap-4">
+                <header class="space-y-6 mb-6">
+                  <div class="size-12 bg-nimbus-shade p-2 rounded-lg ">
+                    <icon.name class="10" />
+                  </div>
+                  <h2 class="font-bold text-[clamp(var(--text-xl),4vw,var(--text-3xl))]">
+                    {name}
+                  </h2>
+                </header>
+                {description.map((desc) => (
+                  <div class="mb-2 space-y-4">
+                    <p>{desc}</p>
+                  </div>
+                ))}
+                {list && (
+                  <ul>
+                    {list.map((item) => (
+                      <li class="flex items-center space-x-3">
+                        <div class="size-2 bg-genesys-orange rounded-full" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </article>
+            ))
+          }
         </div>
       </Section>
     </main>
